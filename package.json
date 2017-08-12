@@ -1,0 +1,15 @@
+{
+  "name": "tere-gram-bot",
+  "version": "0.0.1",
+  "description": "Simple telegram node bot with a few funny commands",
+  "scripts": {
+    "start": "micro-bot -d ${NOW_URL}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "micro-bot": "^1.3.2"
+  }
+}

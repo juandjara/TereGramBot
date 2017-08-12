@@ -32,6 +32,7 @@ bot.command('/help', reply(helpText))
 bot.command('/echo', ({reply, message}) => {
   reply(message.text.replace('/echo', ''))
 })
+bot.command('/status', reply(randomChoice(teres)))
 bot.command('/cat', ({replyWithPhoto}) => replyWithPhoto(loremCat))
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()))
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))
@@ -48,9 +49,6 @@ bot.on('message', ({reply, message}) => {
   }
   if(left_chat_member) {
     reply(`Enga nos vemo ${left_chat_member.username}`)
-  }
-  if(text.indexOf("tere") !== -1) {
-    reply(randomChoice(teres))
   }
 })
 

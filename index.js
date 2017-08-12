@@ -24,7 +24,8 @@ const teres = [
   'que quiere miarma',
   'tere online',
   'aqui esta la tia',
-  'para servirle, por https'
+  'para servirle, por https',
+  'illo ma despertao de la siesta'
 ]
 
 bot.command('/start', reply('Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'))

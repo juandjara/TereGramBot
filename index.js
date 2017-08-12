@@ -6,7 +6,8 @@ const commandDoc = [
   {command: '/help', description: 'Lista de comandos disponibles (esta lista)'},
   {command: '/echo', description: 'Recibe un texto y lo repite'},
   {command: '/answer_of_life', description: 'Cual es el sentido de la vida'},
-  {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'}
+  {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
+  {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'}
 ]
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
@@ -21,6 +22,7 @@ bot.command('/echo', ({reply, message}) => {
 })
 bot.command('/cat', ({replyWithPhoto}) => replyWithPhoto(loremCat))
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()))
+bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))
 bot.on('message', ({reply, message}) => {
   const { 
     new_chat_members, 

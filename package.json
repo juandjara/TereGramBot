@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Simple telegram node bot with a few funny commands",
   "scripts": {
-    "start": "micro-bot -d ${NOW_URL}"
+    "start": "micro-bot -d ${NOW_URL}",
+    "deploy": "now --dotenv --public"
   },
   "keywords": [],
   "author": "",

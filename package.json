@@ -4,12 +4,14 @@
   "description": "Simple telegram node bot with a few funny commands",
   "scripts": {
     "start": "micro-bot -d ${NOW_URL}",
-    "deploy": "now --dotenv --public"
+    "pre-deploy": "node deleteLastDeploy.js",
+    "deploy": "npm run pre-deploy && now --dotenv --public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "dotenv": "^4.0.0",
     "micro-bot": "^1.3.2"
   }

@@ -14,7 +14,7 @@ const helpText = commandDoc
 const answerOfLife = `
   *42* es es sentido de la vida, el universo y *todo lo demas*`
 
-bot.command('/start', reply('Usa /help para ver los comandos disponibles'))
+bot.command('/start', reply('Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'))
 bot.command('/help', reply(helpText))
 bot.command('/echo', ({reply, message}) => {
   reply(message.text.replace('/echo', ''))

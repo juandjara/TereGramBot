@@ -28,7 +28,7 @@ bot.on('message', ({reply, message}) => {
   } = message
   if(new_chat_members) {
     new_chat_members.forEach(user => {
-      reply(`Bienvenido @${user.username}`)
+      reply(`Illo que pasa @${user.username}`)
     })
   }
   if(left_chat_member) {

@@ -1,6 +1,10 @@
 const { Composer, Extra, reply } = require('micro-bot')
 const bot = new Composer()
 
+bot.telegram.getMe().then(info => {
+  bot.options.username = info.username
+})
+
 const loremCat = 'http://thecatapi.com/api/images/get'
 const commandDoc = [
   {command: '/help', description: 'Lista de comandos disponibles (esta lista)'},

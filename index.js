@@ -5,15 +5,27 @@ const loremCat = 'http://thecatapi.com/api/images/get'
 const commandDoc = [
   {command: '/help', description: 'Lista de comandos disponibles (esta lista)'},
   {command: '/echo', description: 'Recibe un texto y lo repite'},
-  {command: '/answer_of_life', description: 'Cual es el sentido de la vida'},
+  {command: '/answer_of_life', description: 'Cual es la respuesta a la pregunta del sentido de la vida, el universo y todo lo demas'},
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
   {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'}
 ]
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
   .join('\n')
-const answerOfLife = `
-  *42* es es sentido de la vida, el universo y *todo lo demas*`
+const answerOfLife = "Error code: *42*"
+const randomChoice = (choices) => {
+  const randomIndex = Math.floor(Math.random() * choices.length)
+  return choices[randomIndex]
+}
+const teres = [
+  'dime',
+  'al aparato',
+  'que dise illo',
+  'que quiere miarma',
+  'tere online',
+  'aqui esta la tia',
+  'para servirle, por https'
+]
 
 bot.command('/start', reply('Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'))
 bot.command('/help', reply(helpText))
@@ -26,7 +38,8 @@ bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))
 bot.on('message', ({reply, message}) => {
   const { 
     new_chat_members, 
-    left_chat_member 
+    left_chat_member,
+    text
   } = message
   if(new_chat_members) {
     new_chat_members.forEach(user => {
@@ -35,6 +48,9 @@ bot.on('message', ({reply, message}) => {
   }
   if(left_chat_member) {
     reply(`Enga nos vemo ${left_chat_member.username}`)
+  }
+  if(text.indexOf("tere") !== -1) {
+    reply(randomChoice(teres))
   }
 })
 

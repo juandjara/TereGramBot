@@ -14,7 +14,7 @@ const helpText = commandDoc
   .join('\n')
 const answerOfLife = "Error code: *42*"
 const randomChoice = (choices) => {
-  const randomIndex = Math.floor(Date.now() % choices.length)
+  const randomIndex = Date.now() % choices.length
   return choices[randomIndex]
 }
 const teres = [

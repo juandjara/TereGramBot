@@ -8,7 +8,8 @@ const commandDoc = [
   {command: '/echo', description: 'Recibe un texto y lo repite'},
   {command: '/answer_of_life', description: 'Cual es la respuesta a la pregunta del sentido de la vida, el universo y todo lo demas'},
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
-  {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'}
+  {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'},
+  {command: '/status', description: 'Comprueba el estado de Tere'}
 ]
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)

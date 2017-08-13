@@ -38,10 +38,10 @@ bot.command('/echo', ({reply, message}) => {
   reply(message.text.replace('/echo', ''))
 })
 bot.command('/status', ({reply}) => reply(randomChoice(teres)))
-bot.command('/cat', ({replyWithPhoto}) => {
-  axios.get(loremCat)
-  .then(res => res.request.res.responseUrl)
-  .then(trueCatUrl => replyWithPhoto(trueCatUrl))
+bot.command('/cat', async ({replyWithPhoto}) => {
+  const res = await axios.get(loremCat)
+  const trueCatUrl = res.request.res.responseUrl
+  replyWithPhoto(trueCatUrl)
 })
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()))
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))

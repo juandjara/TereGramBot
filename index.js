@@ -1,4 +1,5 @@
 const axios = require('axios')
+const donger = require('cool-ascii-faces')
 const { Composer, Extra, reply } = require('micro-bot')
 const bot = new Composer()
 
@@ -9,7 +10,8 @@ const commandDoc = [
   {command: '/answer_of_life', description: 'Cual es la respuesta a la pregunta del sentido de la vida, el universo y todo lo demas'},
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
   {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'},
-  {command: '/status', description: 'Comprueba el estado de Tere'}
+  {command: '/status', description: 'Comprueba el estado de Tere'},
+  {command: '/donger', description: '( ͡° ͜ʖ ͡°)'}
 ]
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
@@ -40,6 +42,15 @@ bot.command('/echo', ({reply, message}) => {
   const msg = message.text
     .replace('/echo', '')
     .replace('@tere_gram_bot', '')
+  reply(msg)
+})
+bot.command('/donger', ({message, reply}) => {
+  const randomDonger = donger()
+  const dongerIndex = donger.faces.indexOf(randomDonger)
+  const msg = `
+    Donger ${dongerIndex}:
+    ${randomDonger}
+  `
   reply(msg)
 })
 bot.command('/status', ({reply}) => reply(randomChoice(teres)))

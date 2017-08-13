@@ -50,6 +50,10 @@ bot.command('/donger', ({message, reply}) => {
   let dongerIndex;
   if(commandHasIndex) {
     dongerIndex = parseInt(/\d+$/.exec(message.text)[0])
+    if(dongerIndex >= donger.faces.length) {
+      reply(`Solo hay ${donger.faces.length} dongers :c`)
+      return
+    }
     selectedDonger = donger.faces[dongerIndex]
   } else {
     selectedDonger = donger()

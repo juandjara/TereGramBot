@@ -18,11 +18,11 @@ const randomChoice = (choices) => {
   return choices[randomIndex]
 }
 const teres = [
-  'dime',
+  'dime sosio',
   'al aparato',
-  'que dise illo',
+  'que dise el tio',
   'que quiere miarma',
-  'tere online',
+  'tere online ;)',
   'aqui esta la tia',
   'para servirle, por https',
   'illo ma despertao de la siesta'
@@ -33,7 +33,7 @@ bot.command('/help', reply(helpText))
 bot.command('/echo', ({reply, message}) => {
   reply(message.text.replace('/echo', ''))
 })
-bot.command('/status', reply(randomChoice(teres)))
+bot.command('/status', ({reply}) => reply(randomChoice(teres)))
 bot.command('/cat', ({replyWithPhoto}) => replyWithPhoto(loremCat))
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()))
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))

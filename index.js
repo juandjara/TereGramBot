@@ -37,7 +37,10 @@ const startMsg = 'Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos dis
 bot.command('/start', reply(startMsg))
 bot.command('/help', reply(helpText))
 bot.command('/echo', ({reply, message}) => {
-  reply(message.text.replace('/echo', ''))
+  const msg = message.text
+    .replace('/echo', '')
+    .replace('@tere_gram_bot', '')
+  reply(msg)
 })
 bot.command('/status', ({reply}) => reply(randomChoice(teres)))
 bot.command('/cat', async ({replyWithPhoto}) => {

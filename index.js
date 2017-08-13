@@ -11,7 +11,7 @@ const commandDoc = [
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
   {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'},
   {command: '/status', description: 'Comprueba el estado de Tere'},
-  {command: '/donger', description: '( ͡° ͜ʖ ͡°)'}
+  {command: '/donger', description:  '( ͡° ͜ʖ ͡°). Puedes pasar un id despues del comando. Si no se seleccionara un donger aleatorio'}
 ]
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
@@ -45,8 +45,16 @@ bot.command('/echo', ({reply, message}) => {
   reply(msg)
 })
 bot.command('/donger', ({message, reply}) => {
-  const randomDonger = donger()
-  const dongerIndex = donger.faces.indexOf(randomDonger)
+  const commandHasIndex = /\/donger \d+$/.exec(message.text);
+  let selectedDonger;
+  let dongerIndex;
+  if(commandHasIndex) {
+    dongerIndex = parseInt(/\d+$/.exec(message.text)[0])
+    selectedDonger = donger.faces[index]
+  } else {
+    selectedDonger = donger()
+    dongerIndex = donger.faces.indexOf(randomDonger)
+  }
   const msg = `
     Donger ${dongerIndex}:
     ${randomDonger}

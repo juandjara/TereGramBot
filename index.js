@@ -50,7 +50,7 @@ bot.command('/donger', ({message, reply}) => {
   let dongerIndex;
   if(commandHasIndex) {
     dongerIndex = parseInt(/\d+$/.exec(message.text)[0])
-    selectedDonger = donger.faces[index]
+    selectedDonger = donger.faces[dongerIndex]
   } else {
     selectedDonger = donger()
     dongerIndex = donger.faces.indexOf(selectedDonger)

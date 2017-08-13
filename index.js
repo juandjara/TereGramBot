@@ -1,3 +1,4 @@
+const axios = require('axios')
 const { Composer, Extra, reply } = require('micro-bot')
 const bot = new Composer()
 
@@ -25,7 +26,10 @@ const teres = [
   'tere online ;)',
   'aqui esta la tia',
   'para servirle, por https',
-  'illo ma despertao de la siesta'
+  'illo ma despertao de la siesta',
+  'illo vete a la mierda',
+  'te quiere i ya cansino',
+  'que me dehe'
 ]
 
 bot.command('/start', reply('Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'))
@@ -34,7 +38,11 @@ bot.command('/echo', ({reply, message}) => {
   reply(message.text.replace('/echo', ''))
 })
 bot.command('/status', ({reply}) => reply(randomChoice(teres)))
-bot.command('/cat', ({replyWithPhoto}) => replyWithPhoto(loremCat))
+bot.command('/cat', ({replyWithPhoto}) => {
+  axios.get(loremCat)
+  .then(res => res.request.res.responseUrl)
+  .then(trueCatUrl => replyWithPhoto(trueCatUrl))
+})
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()))
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))
 bot.on('message', ({reply, message}) => {

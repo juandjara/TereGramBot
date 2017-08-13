@@ -53,7 +53,7 @@ bot.command('/donger', ({message, reply}) => {
     selectedDonger = donger.faces[index]
   } else {
     selectedDonger = donger()
-    dongerIndex = donger.faces.indexOf(randomDonger)
+    dongerIndex = donger.faces.indexOf(selectedDonger)
   }
   const msg = `
     Donger ${dongerIndex}:

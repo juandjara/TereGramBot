@@ -32,8 +32,9 @@ const teres = [
   'te quiere i ya cansino',
   'que me dehe'
 ]
+const startMsg = 'Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'
 
-bot.command('/start', reply('Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'))
+bot.command('/start', reply(startMsg))
 bot.command('/help', reply(helpText))
 bot.command('/echo', ({reply, message}) => {
   reply(message.text.replace('/echo', ''))
@@ -54,7 +55,11 @@ bot.on('message', ({reply, message}) => {
   } = message
   if(new_chat_members) {
     new_chat_members.forEach(user => {
-      reply(`Illo que pasa @${user.username}`)
+      const msg = `Illo que pasa @${user.username}`
+      if(user.username === 'tere_gram_bot') {
+        msg = startMsg
+      }
+      reply(msg)
     })
   }
   if(left_chat_member) {

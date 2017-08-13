@@ -57,7 +57,7 @@ bot.command('/donger', ({message, reply}) => {
   }
   const msg = `
     Donger ${dongerIndex}:
-    ${randomDonger}
+    ${selectedDonger}
   `
   reply(msg)
 })

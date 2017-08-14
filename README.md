@@ -12,3 +12,8 @@ BOT_TOKEN=aaaaa:bbbbbbb
 Para desplegar el bot en `now` es necesario incluir una variable `NOW_TOKEN` en el archivo `.env`
 
 Puedes desplegar una nueva version en now.sh (borrando la antigua) con `npm run deploy`
+
+## Contribuciones
+Se aceptan todo tipo de Pull Requests. Aunque estaría guay cumplir esto:
+* tabulacion con dos espacios
+* usar ES6

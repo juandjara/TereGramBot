@@ -91,6 +91,9 @@ bot.on('message', ({reply, message}) => {
   if(left_chat_member) {
     reply(`Enga nos vemo ${left_chat_member.username}`)
   }
+  if(text.indexOf("tere") !== -1) {
+    reply(randomChoice(teres))
+  }
 })
 
 module.exports = bot

@@ -91,7 +91,7 @@ bot.on('message', ({reply, message}) => {
   if(left_chat_member) {
     reply(`Enga nos vemo ${left_chat_member.username}`)
   }
-  if(/^tere/.test(text)) {
+  if(/(\s|^)[Tt]tere(\s|$)/.test(text)) {
     reply(randomChoice(teres))
   }
 })

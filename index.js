@@ -74,6 +74,7 @@ bot.command('/cat', async ({replyWithPhoto}) => {
 })
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()))
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'))
+bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'))
 bot.on('message', ({reply, message}) => {
   const { 
     new_chat_members, 
@@ -96,6 +97,5 @@ bot.on('message', ({reply, message}) => {
     reply(randomChoice(teres))
   }
 })
-bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'))
 
 module.exports = bot

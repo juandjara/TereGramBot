@@ -11,7 +11,8 @@ const commandDoc = [
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
   {command: '/repo', description: 'Enlace al repositorio de GitHub de este bot'},
   {command: '/status', description: 'Comprueba el estado de Tere'},
-  {command: '/donger', description:  '( ͡° ͜ʖ ͡°). Puedes pasar un id despues del comando. Si no se seleccionara un donger aleatorio'}
+  {command: '/donger', description:  '( ͡° ͜ʖ ͡°). Puedes pasar un id despues del comando. Si no se seleccionara un donger aleatorio'},
+  {command: '/flame', description: 'illo callarse'}
 ]
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
@@ -95,5 +96,6 @@ bot.on('message', ({reply, message}) => {
     reply(randomChoice(teres))
   }
 })
+bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'))
 
 module.exports = bot

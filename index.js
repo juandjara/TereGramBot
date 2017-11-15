@@ -2,6 +2,7 @@ const axios = require('axios')
 const donger = require('cool-ascii-faces')
 const { Composer, Extra, reply } = require('micro-bot')
 const bot = new Composer()
+const pkg = require('./package.json')
 
 const loremCat = 'http://thecatapi.com/api/images/get'
 const commandDoc = [
@@ -35,7 +36,7 @@ const teres = [
   'te quiere i ya cansino',
   'que me dehe'
 ]
-const startMsg = 'Hola. Soy Tere. Tere Gram. Usa /help para ver los comandos disponibles'
+const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
 
 bot.command('/start', reply(startMsg))
 bot.command('/help', reply(helpText))
@@ -93,7 +94,7 @@ bot.on('message', ({reply, message}) => {
   if(left_chat_member) {
     reply(`Enga nos vemo ${left_chat_member.username}`)
   }
-  if(/(\s|^)[Tt]ere(\s|$)/.test(text)) {
+  if(/\btere\b/i.test(text)) {
     reply(randomChoice(teres))
   }
 })

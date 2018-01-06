@@ -84,7 +84,16 @@ bot.on('message', ({reply, message}) => {
   } = message
   if(new_chat_members) {
     new_chat_members.forEach(user => {
-      const msg = `Illo que pasa @${user.username}`
+      // check if the user has an ID created
+      let username = ""
+      if (user.username) {
+        username = user.username
+      } else {
+        username = `${user.first_name} ${user.last_name}`
+      }
+      
+      const msg = `Illo que pasa @${username}`
+      
       if(user.username === 'tere_gram_bot') {
         msg = startMsg
       }

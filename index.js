@@ -84,7 +84,16 @@ bot.on('message', ({reply, message}) => {
   } = message
   if(new_chat_members) {
     new_chat_members.forEach(user => {
-      const msg = `Illo que pasa @${user.username}`
+      // check if the user has an ID created
+      let username = ""
+      if (user.username) {
+        username = user.username
+      } else {
+        username = `${user.first_name} ${user.last_name}`
+      }
+      
+      const msg = `Illo que pasa @${username}`
+      
       if(user.username === 'tere_gram_bot') {
         msg = startMsg
       }
@@ -92,7 +101,14 @@ bot.on('message', ({reply, message}) => {
     })
   }
   if(left_chat_member) {
-    reply(`Enga nos vemo ${left_chat_member.username}`)
+    let username = ""
+    if (user.username) {
+      username = left_chat_member.username
+    } else {
+      username = `${left_chat_member.first_name} ${left_chat_member.last_name}`
+    }
+    
+    reply(`Enga nos vemo ${username}`)
   }
   if(/\btere\b/i.test(text)) {
     reply(randomChoice(teres))

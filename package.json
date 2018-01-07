@@ -1,6 +1,6 @@
 {
   "name": "tere-gram-bot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple telegram node bot with a few funny commands",
   "scripts": {
     "start": "micro-bot -d ${NOW_URL}",

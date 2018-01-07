@@ -87,12 +87,12 @@ bot.on('message', ({reply, message}) => {
       // check if the user has an ID created
       let username = ""
       if (user.username) {
-        username = user.username
+        username = `@{user.username}`
       } else {
-        username = `${user.first_name} ${user.last_name}`
+        username = `${user.first_name}`
       }
       
-      const msg = `Illo que pasa @${username}`
+      const msg = `Illo que pasa ${username}`
       
       if(user.username === 'tere_gram_bot') {
         msg = startMsg
@@ -103,9 +103,9 @@ bot.on('message', ({reply, message}) => {
   if(left_chat_member) {
     let username = ""
     if (user.username) {
-      username = left_chat_member.username
+      username = `@{left_chat_member.username}`
     } else {
-      username = `${left_chat_member.first_name} ${left_chat_member.last_name}`
+      username = `${left_chat_member.first_name}`
     }
     
     reply(`Enga nos vemo ${username}`)

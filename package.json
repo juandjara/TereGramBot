@@ -16,5 +16,8 @@
     "cool-ascii-faces": "^1.3.4",
     "dotenv": "^4.0.0",
     "micro-bot": "^1.3.2"
+  },
+  "devDependencies": {
+    "now": "^9.0.1"
   }
 }

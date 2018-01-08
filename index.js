@@ -87,7 +87,7 @@ bot.on('message', ({reply, message}) => {
       // check if the user has an ID created
       let username = ""
       if (user.username) {
-        username = `@{user.username}`
+        username = `@${user.username}`
       } else {
         username = `${user.first_name}`
       }
@@ -103,7 +103,7 @@ bot.on('message', ({reply, message}) => {
   if(left_chat_member) {
     let username = ""
     if (user.username) {
-      username = `@{left_chat_member.username}`
+      username = `@${left_chat_member.username}`
     } else {
       username = `${left_chat_member.first_name}`
     }

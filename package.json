@@ -5,7 +5,7 @@
   "scripts": {
     "start": "micro-bot -d ${NOW_URL}",
     "pre-deploy": "node deleteLastDeploy.js",
-    "now": "now --token $NOW_TOKEN --public",
+    "now": "now --public --token $NOW_TOKEN",
     "deploy": "npm run pre-deploy && npm run now"
   },
   "keywords": [],

@@ -34,7 +34,9 @@ const teres = [
   'illo ma despertao de la siesta',
   'illo vete a la mierda',
   'te quiere i ya cansino',
-  'que me dehe'
+  'que me dehe',
+  'me va a come lo que tu sabe',
+  'no me cabrea pero me da coraje'
 ]
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
 

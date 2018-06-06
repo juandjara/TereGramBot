@@ -36,7 +36,11 @@ const teres = [
   'te quiere i ya cansino',
   'que me dehe',
   'me va a come lo que tu sabe',
-  'no me cabrea pero me da coraje'
+  'no me cabrea pero me da coraje',
+  'tesqueiya',
+  'me tiene ahta er coño ya',
+  'ji o qué?',
+  'que me súa er jigo'
 ]
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
 

@@ -57,7 +57,7 @@ const teres = [
   'eso ha tocao mis sentimientos',
   'como me grite te robo el wifi',
   'a que te elimino del fasebuk',
-  'nomentero lo siento, soy zurda'
+  'nomentero lo siento, soy zurda',
   'tesqueiya',
   'me tiene ahta er coño ya',
   'ji o qué?',

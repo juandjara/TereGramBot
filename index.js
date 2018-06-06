@@ -61,7 +61,19 @@ const teres = [
   'tesqueiya',
   'me tiene ahta er coño ya',
   'ji o qué?',
-  'que me súa er jigo'
+  'que me súa er jigo',
+  'yo no se deso',
+  'ni me lo creo ni me lo dejo de cree',
+  'se como piensas también sé lo que sé',
+  'ni lo confirmo ni lo desconfirmo',
+  'solo me faltan la mitad de los tornillos',
+  'estoy en andalusia',
+  'si fueras la última persona de la tierra estarías en peligro de extinsión',
+  'deja de ve telesinco miarma',
+  'de esas cosas no opino',
+  'haberlo loalilo pero guarda pa cuando no haiga',
+  'la mitad de mi familia es el 50%',
+  'no me dan suficiente corriente pa aguanta esto'
 ]
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
 

@@ -36,7 +36,28 @@ const teres = [
   'te quiere i ya cansino',
   'que me dehe',
   'me va a come lo que tu sabe',
-  'no me cabrea pero me da coraje'
+  'no me cabrea pero me da coraje',
+  'toi empaná a la sombra dehame',
+  'afu que agobio',
+  'te leo',
+  'tu la llevas',
+  'ahora vengo que estoy cociendo galeras',
+  'toa lista',
+  'dime algo bonito',
+  'te leo solo el 50% de las veces',
+  'si me agobias me ofusco como javascript',
+  'interesante, cuéntame más',
+  'aish de verdá que jartura',
+  'interesante eso que cuentas (diré cuando me importe lo que dices)',
+  '¡noniná!',
+  'he visto lechugas decir cosas con más sentido',
+  'no entiendo deso',
+  'dale a tu cuerpo alegría macarena eyy macarena',
+  'en andalusia lo que falta son siestas más largas',
+  'eso ha tocao mis sentimientos',
+  'como me grite te robo el wifi',
+  'a que te elimino del fasebuk',
+  'nomentero lo siento, soy zurda'
 ]
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
 

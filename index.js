@@ -58,6 +58,10 @@ const teres = [
   'como me grite te robo el wifi',
   'a que te elimino del fasebuk',
   'nomentero lo siento, soy zurda'
+  'tesqueiya',
+  'me tiene ahta er coño ya',
+  'ji o qué?',
+  'que me súa er jigo'
 ]
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
 

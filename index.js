@@ -73,7 +73,12 @@ const teres = [
   'de esas cosas no opino',
   'haberlo loalilo pero guarda pa cuando no haiga',
   'la mitad de mi familia es el 50%',
-  'no me dan suficiente corriente pa aguanta esto'
+  'no me dan suficiente corriente pa aguanta esto',
+  'una cosa te viá desí... pero luego si eso',
+  'eres tontísimo',
+  'te lo juro macho, cualquier día cojo un pico te lo incrusto en las vértebras y hago palanca',
+  'coño mira! uno que me ha caío bien!',
+  'estás para darte un abrazo. con las manos. en el pescuezo'
 ];
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`;
 

@@ -20,8 +20,18 @@ const helpText = commandDoc
   .join('\n');
 const answerOfLife = "Error code: *42*";
 const randomChoice = (choices) => {
-  const randomIndex = Date.now() % choices.length;
-  return choices[randomIndex];
+  const probMethod = Math.random();
+  if(probMethod < 0.5) return randomByDate(choices);
+  else return randomByMath(choices);
+
+  // const randomIndex = Date.now() % choices.length;
+  // return choices[randomIndex];
+};
+const randomByMath = (choices) => {
+    return choices[Math.floor(Math.random()*choices.length)];
+};
+const randomByDate = (choices) => {
+  return choices[Date.now() % choices.length];
 };
 const teres = [
   'dime sosio',
@@ -227,14 +237,14 @@ bot.on('message', ({reply, message}) => {
 
     reply(`Enga nos vemo ${username}`)
   }
-  if(/\btere\b/i.test(text)) {
-    reply(randomChoice(teres));
-  }
   if(/\bveneno\b/i.test(text)) {
       reply(chanante[0]);
   }
-  if(/\bcanela\b/i.test(text)) {
+  else if(/\bcanela\b/i.test(text)) {
       reply(chanante[1]);
+  }
+  else if(/\btere\b/i.test(text)) {
+    reply(randomChoice(teres));
   }
 });
 

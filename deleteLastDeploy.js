@@ -1,13 +1,14 @@
+'use strict';
 // this script requires a `.env` file with a `NOW_TOKEN` to work
 
-require('dotenv').config()
-const pkg = require('./package.json')
+require('dotenv').config();
+const pkg = require('./package.json');
 const axios = require('axios').create({
-  baseURL: "https://api.zeit.co/now",
+  baseURL: 'https://api.zeit.co/now',
   headers: {
-    Authorization: `Bearer ${process.env.NOW_TOKEN}`
-  }
-})
+    Authorization: `Bearer ${process.env.NOW_TOKEN}`,
+  },
+});
 
 axios.get('/deployments')
   .then(res => res.data)
@@ -16,4 +17,4 @@ axios.get('/deployments')
   .then(lastDeploy => axios.delete(`/deployments/${lastDeploy.uid}`))
   .then(res => res.data)
   .then(console.log)
-  .catch(err => console.error(err.response ? err.response.data : err.message))
+  .catch(err => console.error(err.response ? err.response.data : err.message));

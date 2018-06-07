@@ -19,7 +19,7 @@ const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
   .join('\n');
 const answerOfLife = "Error code: *42*";
-let randomChoice = (choices) => {
+const randomChoice = (choices) => {
   const randomIndex = Date.now() % choices.length;
   return choices[randomIndex];
 };
@@ -168,7 +168,7 @@ bot.command('/echo', ({reply, message}) => {
   reply(msg)
 });
 bot.command('/donger', ({message, reply}) => {
-  let commandHasIndex = /\/donger \d+$/.exec(message.text);
+  const commandHasIndex = /\/donger \d+$/.exec(message.text);
   let selectedDonger;
   let dongerIndex;
   if(commandHasIndex) {
@@ -190,8 +190,8 @@ bot.command('/donger', ({message, reply}) => {
 });
 bot.command('/status', ({reply}) => reply(randomChoice(teres)));
 bot.command('/cat', async ({replyWithPhoto}) => {
-  let res = await axios.get(loremCat);
-  let trueCatUrl = res.request.res.responseUrl;
+  const res = await axios.get(loremCat);
+  const trueCatUrl = res.request.res.responseUrl;
   replyWithPhoto(trueCatUrl)
 });
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()));
@@ -213,11 +213,7 @@ bot.on('message', ({reply, message}) => {
         username = `${user.first_name}`
       }
 
-      let msg = `Illo que pasa ${username}`;
-
-      if(user.username === 'tere_gram_bot') {
-        msg = startMsg
-      }
+      const msg = `Illo que pasa ${username}`;
       reply(msg)
     })
   }

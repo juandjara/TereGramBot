@@ -37,10 +37,6 @@ const teres = [
   'que me dehe',
   'me va a come lo que tu sabe',
   'no me cabrea pero me da coraje',
-<<<<<<< HEAD
-];
-const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`;
-=======
   'toi empaná a la sombra dehame',
   'afu que agobio',
   'te leo',
@@ -78,9 +74,8 @@ const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help pa
   'haberlo loalilo pero guarda pa cuando no haiga',
   'la mitad de mi familia es el 50%',
   'no me dan suficiente corriente pa aguanta esto'
-]
-const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`
->>>>>>> 10c93af0bb7275f19723eafbc331196bde430d1a
+];
+const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`;
 
 bot.command('/start', reply(startMsg));
 bot.command('/help', reply(helpText));

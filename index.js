@@ -78,8 +78,85 @@ const teres = [
   'eres tontísimo',
   'te lo juro macho, cualquier día cojo un pico te lo incrusto en las vértebras y hago palanca',
   'coño mira! uno que me ha caío bien!',
-  'estás para darte un abrazo. con las manos. en el pescuezo'
+  'estás para darte un abrazo. con las manos. en el pescuezo',
+  'hay castañas más simpáticas que tu',
+  'po zi',
+  'ola soy tere y ando terca',
+  'salta por la ventana y luego imagínate que vuelas',
+  'a que llorooo!',
+  'ira lo que ma dicho',
+  'aju que visio',
+  'te autozancadilleas con las palabras primoh',
+  'que alguien me dispare',
+  'hoy vengo peligrossa',
+  'cuéntame más',
+  'ande va tu tan suelto hoy!',
+  'no es porti, espormi que no taguanto',
+  'me parece que tu ere de los que tira la mano y esconde la piedra',
+  'lógica es que si la pelota está en medio de la carretera, el niño estará debajo del coche',
+  'ok kabesa',
+  'eres un fullero',
+  'tentiendo pero no tecomprendo',
+  'sisi pero ¿por qué?',
+  'endebe quererme saltas con eso',
+  'no estoy loca pero soy zurda',
+  'mi que crio',
+  'surfeando te quería ve yo',
+  'aish que caló jace',
+  'lo intenté pero no se-de-java',
+  'que doló cabesa',
+  'me pica la nari endebe lo zojo y la zoreja',
+  'programar en java es como decir armondiga',
+  'no tienes ni una mija de gracia',
+  'soy muy hippie para contestarte',
+  'me siento a tope gama',
+  'si tienes agalla repite eso',
+  'no te se ocurra comparme ami con beyonce',
+  'lo único que se es que me gustan los berberechos',
+  'la mitad de andalusia es el 50%',
+  'eso eh un clásico',
+  'to palante',
+  'repite eso y te hago puding',
+  'hoy estoy to talentosa',
+  'que guapa ma levantao de la siesta hoy',
+  'oye, tu cantas en el grupo de los chichos-brother?',
+  'que pachanguero está hoy el grupo',
+  'dentro la cabesa tienes una castaña pilonga',
+  'me sacrifico y te leo pero no pidas mucho más',
+  'tengo fama de borde pero me lo resbala',
+  'mi superheroe favorito es falete',
+  'prueba con el karaoke en las berbenas porque esto no es lo tullo primoh',
+  'sisabe pa que pregunta',
+  'mira que bien, ahora diselo a quien le importe',
+  'dehame que stoy cociendo papa',
+  'repartires un gazpachito aquí pa la peña ya no?',
+  'aquí presente made in andalusia',
+  'afu dio que calvario gente',
+  'voy pa la feria con una maceta rebujito',
+  'te miro y no te veo',
+  'se me va la cabesa porque estoy hecha en javascript',
+  'no deberían darle un router a cualquiera',
+  'que grasioso el chiquillo',
+  'interesante, cuéntame má',
+  'lo flipo y me queo tranquila pero preocupá',
+  'me se quea el cuello loco de desirte que nó',
+  'soy moerna pero sin pirsin',
+  'to eso es un mito',
+  'quiere ser mi chico martini?',
+  'soy peligrosa como un mentos con cocacola',
+  'no lo niegue que sta to demostrao',
+  'me entretenía más viendo embrujadas',
+  'una vez tuve pesadilla con los ramones',
+  '3... 2... 1... todavía sigues ahí?¿?¿?',
+  'las malas lenguas me hablaron bien de ti',
+  'to eso es un rumor',
+  'pa eso me llama',
+  'interesante, ma queao como wal disney: to helá',
+  'charmander a caballo',
+  've a la esquina de pensar sin perder ni un instante',
+  'estoy comprando en la teletienda'
 ];
+const chanante = ['Es veneno!', 'A canela!'];
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} Usa /help para ver los comandos disponibles`;
 
 bot.command('/start', reply(startMsg));
@@ -156,6 +233,12 @@ bot.on('message', ({reply, message}) => {
   }
   if(/\btere\b/i.test(text)) {
     reply(randomChoice(teres));
+  }
+  if(/\bveneno\b/i.test(text)) {
+      reply(chanante[0]);
+  }
+  if(/\bcanela\b/i.test(text)) {
+      reply(chanante[1]);
   }
 });
 

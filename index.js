@@ -179,6 +179,7 @@ const teres = [
   'charmander a caballo',
   've a la esquina de pensar sin perder ni un instante',
   'estoy comprando en la teletienda',
+  'Andalusía libre caraho!'
 ];
 const chanante = ['Es veneno!', 'A canela!'];
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} `

@@ -212,7 +212,8 @@ const teres = [
   'invitame a cená y luego hablamo',
   'cria ojos y tendrás más ojos que cuervos',
   'tengo un sueño: tener un sueño!',
-  'como administradora del grupo y afiliada nº 81947 en "Adopta un gato zurdo este verano" te ordeno que me sigas en quitter'
+  'como administradora del grupo y afiliada nº 81947 en "Adopta un gato zurdo este verano" te ordeno que me sigas en quitter',
+  'omae wa mo shindeiru'
 ];
 const chanante = ['Es veneno!', 'A canela!'];
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} `

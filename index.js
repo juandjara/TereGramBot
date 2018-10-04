@@ -6,7 +6,7 @@ const { Composer, Extra, reply } = require('micro-bot');
 const bot = new Composer();
 const pkg = require('./package.json');
 
-const fs = require('fs')
+const teres = require('./teres.json');
 
 const loremCat = 'http://thecatapi.com/api/images/get';
 const commandDoc = [
@@ -47,12 +47,6 @@ const randomByMath = (choices) => {
 const randomByDate = (choices) => {
   return choices[Date.now() % choices.length];
 };
-
-// teres from file
-const teresRaw = fs.readFileSync('teres.json');
-
-// teres' array
-const teres = JSON.parse(teresRaw).teres;
 
 const chanante = ['Es veneno!', 'A canela!'];
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} `

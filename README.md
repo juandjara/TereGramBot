@@ -16,4 +16,4 @@ Puedes desplegar una nueva version en now.sh (borrando la antigua) con `npm run 
 ## Contribuciones
 Se aceptan todo tipo de Pull Requests. Aunque estaría guay cumplir esto:
 * tabulacion con dos espacios
-* usar ES6
+* usar estandares de ES6 en adelante (`const` y `let` en vez de `var` y etc)

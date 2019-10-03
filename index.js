@@ -2,9 +2,15 @@
 
 const axios = require('axios');
 const donger = require('cool-ascii-faces');
-const { Composer, Extra, reply } = require('micro-bot');
+const { Telegram, Composer, Extra, reply } = require('micro-bot');
 const bot = new Composer();
+const telegram = new Telegram(process.env.BOT_TOKEN);
 const pkg = require('./package.json');
+
+let botid;
+telegram.getMe().then(info => {
+  botid = info.id;
+});
 
 const teres = require('./teres.json');
 
@@ -106,8 +112,10 @@ bot.on('message', ({reply, message}) => {
         username = `${user.first_name}`;
       }
 
-      const msg = `Illo que pasa ${username}`;
-      reply(msg);
+      if (user.id != botid) {
+        const msg = `Illo que pasa ${username}`;
+        reply(msg);
+      }
     });
   }
   if (left_chat_member) {

@@ -11,8 +11,8 @@ const hiddenmessage = (ctx) => {
   });
   try {
     ctx.telegram.sendMessage(sender,
-      `Cítame este mensaje y dime qué quieres mandar por el grupo, anda.
-      {{${originalChat}}}`);
+      'Cítame este mensaje y dime qué quieres mandar por el grupo, anda.' +
+      `{{${originalChat}}}`);
   } catch (e) {
     ctx.reply('Me vas a tener que hablar por privao, campeón.');
   }

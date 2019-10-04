@@ -49,8 +49,6 @@ module.exports = {
     const {message, reply} = ctx;
     const {text} = message;
 
-    console.log(text);
-
     if (/\bve+ne+no+\b/i.test(text)) {
       reply(chanante[0]);
     } else if (/\bca+ne+la+\b/i.test(text)) {

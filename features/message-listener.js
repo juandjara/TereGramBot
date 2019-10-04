@@ -30,18 +30,21 @@ module.exports = {
   },
 
   farewell: (ctx) => {
-    const {message, reply} = ctx;
+    const {message, botInfo, reply} = ctx;
     const {left_chat_member} = message;
 
-    let username = '';
-    if (left_chat_member) {
-      if (left_chat_member.username) {
-        username = `@${left_chat_member.username}`;
-      } else {
-        username = `${left_chat_member.first_name}`;
-      }
 
-      reply(`Enga nos vemo ${username}`);
+    if (left_chat_member) {
+      if (left_chat_member.id !== botInfo.id) {
+        let username = '';
+        if (left_chat_member.username) {
+          username = `@${left_chat_member.username}`;
+        } else {
+          username = `${left_chat_member.first_name}`;
+        }
+
+        reply(`Enga nos vemo ${username}`);
+      }
     }
   },
 

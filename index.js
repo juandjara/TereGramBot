@@ -120,11 +120,11 @@ bot.on('message', ({reply, message}) => {
 
     reply(`Enga nos vemo ${username}`);
   }
-  if (/\bveneno\b/i.test(text)) {
+  if (/\bve+ne+no+\b/i.test(text)) {
     reply(chanante[0]);
-  } else if (/\bcanela\b/i.test(text)) {
+  } else if (/\bca+ne+la+\b/i.test(text)) {
     reply(chanante[1]);
-  } else if (/\btere\b/i.test(text)) {
+  } else if (/\bt+e+r+e+\b/i.test(text)) {
     reply(randomChoice(teres));
   }
 });

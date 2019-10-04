@@ -8,6 +8,8 @@ Para lanzar este bot es necesario un archivo `.env` en la raiz del proyecto que 
 BOT_TOKEN=aaaaa:bbbbbbb
 ```
 
+Para obtener un Bot Token habla con [@BotFather](https://telegram.me/BotFather)
+
 ## desplegar en [now.sh](https://now.sh)
 Para desplegar el bot en `now` es necesario incluir una variable `NOW_TOKEN` en el archivo `.env`
 

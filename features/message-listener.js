@@ -1,6 +1,8 @@
 'use strict';
 
-const teres = require('./teres.json');
+const utils = require('../utils');
+
+const teres = require('../teres.json');
 const chanante = ['Es veneno!', 'A canela!'];
 
 module.exports = {
@@ -47,12 +49,14 @@ module.exports = {
     const {message, reply} = ctx;
     const {text} = message;
 
+    console.log(text);
+
     if (/\bve+ne+no+\b/i.test(text)) {
       reply(chanante[0]);
     } else if (/\bca+ne+la+\b/i.test(text)) {
       reply(chanante[1]);
     } else if (/\bt+e+r+e+\b/i.test(text)) {
-      reply(randomChoice(teres));
+      reply(utils.randomChoice(teres));
     }
-  }
+  },
 };

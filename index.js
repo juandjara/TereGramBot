@@ -3,6 +3,8 @@
 const {Composer, Extra, reply} = require('micro-bot');
 const bot = new Composer();
 
+const utils = require('./utils');
+
 const teres = require('./teres.json');
 
 const cat = require('./features/cat');
@@ -38,20 +40,6 @@ const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
   .join('\n');
 const answerOfLife = 'Error code: *42*';
-const randomChoice = (choices) => {
-  const probMethod = Math.random();
-  if (probMethod < 0.5) return randomByDate(choices);
-  else return randomByMath(choices);
-
-  // const randomIndex = Date.now() % choices.length;
-  // return choices[randomIndex];
-};
-const randomByMath = (choices) => {
-  return choices[Math.floor(Math.random() * choices.length)];
-};
-const randomByDate = (choices) => {
-  return choices[Date.now() % choices.length];
-};
 
 const startMsg = `Hola. Soy Tere. Tere Gram. Version ${pkg.version} `
   + 'Usa /help para ver los comandos disponibles';
@@ -64,7 +52,7 @@ bot.command('/echo', ({reply, message}) => {
     .replace('@tere_gram_bot', '');
   reply(msg);
 });
-bot.command('/status', ({reply}) => reply(randomChoice(teres)));
+bot.command('/status', ({reply}) => reply(utils.randomChoice(teres)));
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()));
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'));
 bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'));

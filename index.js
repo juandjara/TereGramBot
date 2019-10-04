@@ -4,6 +4,7 @@ const axios = require('axios');
 const donger = require('cool-ascii-faces');
 const { Composer, Extra, reply } = require('micro-bot');
 const bot = new Composer();
+const hiddenmessage = require('./features/hiddenmessage');
 const pkg = require('./package.json');
 
 const teres = require('./teres.json');
@@ -28,6 +29,7 @@ const commandDoc = [
     'comando. Si no se seleccionara un donger aleatorio',
   },
   {command: '/flame', description: 'illo callarse'},
+  {command: '/hiddenmsg', description: 'Uy, esto no se para qué es...'},
 ];
 const helpText = commandDoc
   .map(c => `${c.command} ${c.description}`)
@@ -90,42 +92,59 @@ bot.command('/cat', async({replyWithPhoto}) => {
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()));
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'));
 bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'));
-bot.on('message', ({reply, message}) => {
+bot.command('/hiddenmsg', hiddenmessage);
+
+bot.on('message', ({reply, message, chat, telegram, deleteMessage}) => {
+  const [originalChatID, senderID] = [chat.id, message.from.id];
   let {
     new_chat_members,
     left_chat_member,
     text,
   } = message;
-  if (new_chat_members) {
-    new_chat_members.forEach(user => {
-      // check if the user has an ID created
-      let username = '';
-      if (user.username) {
-        username = `@${user.username}`;
+
+  if (originalChatID === senderID) {
+    const {reply_to_message} = message;
+    if (reply_to_message) {
+      const originID = reply_to_message.text.match(/{{(.+?)}}/);
+      if (originID && originID[1]) {
+        deleteMessage(reply_to_message.message_id);
+        telegram.sendMessage(originID[1], text);
       } else {
-        username = `${user.first_name}`;
+        reply('Con esto no puedo hacer yo ná!');
+      }
+    }
+  } else {
+    if (new_chat_members) {
+      new_chat_members.forEach(user => {
+        // check if the user has an ID created
+        let username = '';
+        if (user.username) {
+          username = `@${user.username}`;
+        } else {
+          username = `${user.first_name}`;
+        }
+
+        const msg = `Illo que pasa ${username}`;
+        reply(msg);
+      });
+    }
+    if (left_chat_member) {
+      let username = '';
+      if (left_chat_member.username) {
+        username = `@${left_chat_member.username}`;
+      } else {
+        username = `${left_chat_member.first_name}`;
       }
 
-      const msg = `Illo que pasa ${username}`;
-      reply(msg);
-    });
-  }
-  if (left_chat_member) {
-    let username = '';
-    if (left_chat_member.username) {
-      username = `@${left_chat_member.username}`;
-    } else {
-      username = `${left_chat_member.first_name}`;
+      reply(`Enga nos vemo ${username}`);
     }
-
-    reply(`Enga nos vemo ${username}`);
-  }
-  if (/\bve+ne+no+\b/i.test(text)) {
-    reply(chanante[0]);
-  } else if (/\bca+ne+la+\b/i.test(text)) {
-    reply(chanante[1]);
-  } else if (/\bt+e+r+e+\b/i.test(text)) {
-    reply(randomChoice(teres));
+    if (/\bve+ne+no+\b/i.test(text)) {
+      reply(chanante[0]);
+    } else if (/\bca+ne+la+\b/i.test(text)) {
+      reply(chanante[1]);
+    } else if (/\bt+e+r+e+\b/i.test(text)) {
+      reply(randomChoice(teres));
+    }
   }
 });
 

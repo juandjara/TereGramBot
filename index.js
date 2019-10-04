@@ -2,8 +2,9 @@
 
 const axios = require('axios');
 const donger = require('cool-ascii-faces');
-const { Composer, Extra, reply } = require('micro-bot');
+const { Telegram, Composer, Extra, reply } = require('micro-bot');
 const bot = new Composer();
+
 const hiddenmessage = require('./features/hiddenmessage');
 const pkg = require('./package.json');
 

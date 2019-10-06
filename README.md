@@ -10,6 +10,9 @@ BOT_TOKEN=aaaaa:bbbbbbb
 
 Para obtener un Bot Token habla con [@BotFather](https://telegram.me/BotFather)
 
+Si quieres que tu bot interactue correctamente con los grupos asegúrate de cambiar su configuración
+de privacidad para grupos usando las opciones de BotFather.
+
 ## Contribuciones
 Se aceptan todo tipo de Pull Requests. Aunque estaría guay cumplir esto:
 * tabulacion con dos espacios

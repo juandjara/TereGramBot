@@ -6,13 +6,16 @@ const bot = new Composer();
 const utils = require('./utils');
 
 const teres = require('./teres.json');
+const pkg = require('./package.json');
 
 const {
+  cage,
   cat,
   dog,
   donger,
   hiddenMessage,
-  messageListener
+  messageListener,
+  yesno,
 } = require('./features');
 
 const commandDoc = [
@@ -23,7 +26,11 @@ const commandDoc = [
     description: 'Cual es la respuesta a la pregunta del sentido' +
       ' de la vida, el universo y todo lo demas',
   },
+  {command: '/cage', description: 'Fotos de Nic Cage, ' +
+      '¿qué sería de nosotros sin él?'},
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
+  {command: '/dog', description: 'Fotos de perros, porque no discriminamos'},
+  {command: '/yesno', description: 'Por si no sabes si debieras hacer algo'},
   {
     command: '/repo',
     description: 'Enlace al repositorio de GitHub de este bot',
@@ -57,9 +64,13 @@ bot.command('/status', ({reply}) => reply(utils.randomChoice(teres)));
 bot.command('/answer_of_life', reply(answerOfLife, Extra.markdown()));
 bot.command('/repo', reply('https://github.com/juandjara/teregrambot'));
 bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'));
+bot.command('/cage', cage);
 bot.command('/cat', cat);
+bot.command('/dog', dog);
 bot.command('/donger', donger);
 bot.command('/hiddenmsg', hiddenMessage.commandExecuter);
+bot.command('/yesno', yesno);
+
 
 bot.on('message',
   (ctx) => {

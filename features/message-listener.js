@@ -5,6 +5,8 @@ const utils = require('../utils');
 const teres = require('../teres.json');
 const chanante = ['Es veneno!', 'A canela!'];
 
+const yesno = require('./yesno');
+
 module.exports = {
   greetings: (ctx) => {
     const {message, botInfo, reply} = ctx;
@@ -52,7 +54,9 @@ module.exports = {
     const {message, reply} = ctx;
     const {text} = message;
 
-    if (/\bve+ne+no+\b/i.test(text)) {
+    if (/\bt+e+r+e+\b(?:.*)\?/i.test(text)) {
+      yesno(ctx);
+    } else if (/\bve+ne+no+\b/i.test(text)) {
       reply(chanante[0]);
     } else if (/\bca+ne+la+\b/i.test(text)) {
       reply(chanante[1]);

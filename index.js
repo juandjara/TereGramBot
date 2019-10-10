@@ -7,12 +7,13 @@ const utils = require('./utils');
 
 const teres = require('./teres.json');
 
-const cat = require('./features/cat');
-const donger = require('./features/donger');
-const hiddenMessage = require('./features/hidden-message');
-const messageListener = require('./features/message-listener');
-const pkg = require('./package.json');
-
+const {
+  cat,
+  dog,
+  donger,
+  hiddenMessage,
+  messageListener
+} = require('./features');
 
 const commandDoc = [
   {command: '/help', description: 'Lista de comandos disponibles (esta lista)'},

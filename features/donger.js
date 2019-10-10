@@ -2,24 +2,32 @@
 
 const donger = require('cool-ascii-faces');
 
-module.exports = ({message, reply}) => {
-  const commandHasIndex = /\/donger \d+$/.exec(message.text);
-  let selectedDonger;
-  let dongerIndex;
-  if (commandHasIndex) {
-    dongerIndex = parseInt(/\d+$/.exec(message.text)[0], 10);
-    if (dongerIndex >= donger.faces.length) {
-      reply(`Solo hay ${donger.faces.length - 1} dongers :c`);
-      return;
-    }
-    selectedDonger = donger.faces[dongerIndex];
-  } else {
-    selectedDonger = donger();
-    dongerIndex = donger.faces.indexOf(selectedDonger);
+const selectDonger = (dongerIndex) => {
+  
+  if (dongerIndex === undefined) {
+    const value = donger();
+    return {value, index: donger.faces.indexOf(value)}
   }
-  const msg = `
-    Donger ${dongerIndex}:
-    ${selectedDonger}
-  `;
-  reply(msg);
+  
+  if (dongerIndex >= donger.faces.length) {
+     throw "Index bigger than dongers length";
+  }
+  
+  return {value: donger.faces[dongerIndex], index: dongerIndex}
+};
+
+module.exports = ({message, reply}) => {
+  try {  
+    const {groups: {index}} = /\/donger\s?(?<index>\d+)?$/.exec(message.text);
+    const selectedDonger = selectDonger(index);
+    
+    return reply(`
+      Donger ${selectedDonger.index}:
+      ${selectedDonger.value}
+    `);
+    
+  } catch(err) {
+    console.log(err);
+    return reply(`Solo hay ${donger.faces.length - 1} dongers :c`);
+  }
 };

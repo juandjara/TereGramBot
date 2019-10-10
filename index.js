@@ -24,6 +24,7 @@ const commandDoc = [
       ' de la vida, el universo y todo lo demas',
   },
   {command: '/cat', description: 'Fotos de gatos, el nucleo de internet'},
+  {command: '/dog', description: 'Wow dogge, such dogge'},
   {
     command: '/repo',
     description: 'Enlace al repositorio de GitHub de este bot',
@@ -60,6 +61,12 @@ bot.command('/flame', reply('illo chavale callarse que sus baneo a tos'));
 bot.command('/cat', cat);
 bot.command('/donger', donger);
 bot.command('/hiddenmsg', hiddenMessage.commandExecuter);
+bot.command('/godfather', ({reply}) => {
+  const commandText = commandDoc
+    .map(command => `${command.command.substring(1)} - ${command.description}`).
+    join("\n")
+  return reply(commandText);
+});
 
 bot.on('message',
   (ctx) => {

@@ -1,10 +1,10 @@
 {
   "name": "tere-gram-bot",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Simple telegram node bot with a few funny commands",
   "scripts": {
     "start": "micro-bot -e",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,12 @@
     "micro-bot": "^2.5.3"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-strongloop": "^2.1.0"
+    "eslint": "^6.5.1",
+    "eslint-config-semistandard": "^15.0.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

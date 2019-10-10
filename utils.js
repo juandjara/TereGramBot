@@ -1,5 +1,3 @@
-'use strict';
-
 const randomChoice = (choices) => {
   const probMethod = Math.random();
   if (probMethod < 0.5) return randomByDate(choices);
@@ -15,5 +13,5 @@ const randomByDate = (choices) => {
 module.exports = {
   randomChoice,
   randomByMath,
-  randomByDate,
+  randomByDate
 };

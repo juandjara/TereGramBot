@@ -62,6 +62,8 @@ module.exports = {
       reply(chanante[1]);
     } else if (/\bt+e+r+e+\b/i.test(text)) {
       reply(utils.randomChoice(teres));
+    } else if (/\b([B-b]+u+m+ ){2}+[T-t]+e+r+e+\b/i.test(text)) {
+      reply("Bum Bum!);
     }
   },
 };
